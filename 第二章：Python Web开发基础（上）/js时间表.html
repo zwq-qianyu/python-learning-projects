@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript实现时间表</title>
+</head>
+<body>
+	<h3>利用js中的内置日期对象实现时间表</h3>
+	<div style="font-size: 18px" id="utime"></div>
+	<script type="text/javascript">
+		setInterval(function(){
+			//创建日期对象
+			var time = new Date();
+			//获取具体时间
+			var y = time.getFullYear();
+			var m = time.getMonth()+1;
+			var d = time.getDate();
+			var h = time.getHours();
+			var m = time.getMinutes();
+			var s = time.getSeconds();
+			//拼装时间戳
+			var now = y+"-"+m+"-"+d+" "+h+":"+m+":"+s;
+			//放置到div层
+			document.getElementById("utime").innerHTML = now;
+		},1000);
+	</script>
+</body>
+</html>

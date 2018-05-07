@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript简单计算器的实现</title>
+	<style type="text/css">
+		body{text-align: center}
+	</style>
+	<script type="text/javascript">
+		function dofun(n){
+			//获取两个变量,获取到的为字符串类型，需要使用parseInt转换数据类型
+			var a = parseInt(document.my_form.num1.value);
+			var b = parseInt(document.my_form.num2.value);
+			//判断执行方式并执行
+			switch(n){
+				case 1: var res = a+"+"+b+"="+(a+b);break;
+				case 2: var res = a+"-"+b+"="+(a-b);break;
+				case 3: var res = a+"*"+b+"="+(a*b);break;
+				case 4: var res = a+"/"+b+"="+(a/b);break;
+			}
+			document.my_form.res.value = res;
+		}
+	</script>
+</head>
+<body>
+	<h3>JavaScript简单计算器的实现</h3>
+	<form name="my_form" method="get">
+		数值1：<input type="text" name="num1" size="12"><br/><br/>
+		数值1：<input type="text" name="num2" size="12"><br/><br/>
+		结果：<input type="text" name="res" size="12" style="border: 0px"><br/><br/>
+		<input type="button" value="加" onclick="dofun(1)">
+		<input type="button" value="减" onclick="dofun(2)">
+		<input type="button" value="乘" onclick="dofun(3)">
+		<input type="button" value="除" onclick="dofun(4)">
+	</form>
+</body>
+</html>
